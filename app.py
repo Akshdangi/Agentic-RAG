@@ -674,15 +674,17 @@ def build_app():
     return app
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# Create app at top level for Vercel
+app = build_app()
+
+# Local development only
 if __name__ == "__main__":
     print("\n" + "="*60)
-    print("  🧠 CRAG Agentic RAG — Self-Correcting Multi-Agent System")
+    print("  🚀 CRAG AI — Advanced Retrieval-Augmented Generation")
     print("="*60)
-    print("\nStarting Gradio server...")
+    print("\nStarting application...")
     print("Make sure you have set GROQ_API_KEY and TAVILY_API_KEY in .env\n")
-    
-    app = build_app()
+
     app.launch(
         server_name="0.0.0.0",
         server_port=7860,
